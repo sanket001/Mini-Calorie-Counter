@@ -4,16 +4,21 @@
     <meta charset="utf-8">
     <title>Mini Calorie Counter</title>
   </head>
+    Select One of the following foods to track.
   <body>
     <div id = 'app'>
-      {{ calorie }}
+
+      <ul>
+        <li v-for="food in foods">{{ food }}</li>
+      </ul>
+
     </div>
       <script src="vue.js"></script>
         <script>
           new Vue({
             el: '#app',
             data: {
-              calorie: "24"
+              foods: ["Pizza", "Chinese"]
             }
           })
       </script>
