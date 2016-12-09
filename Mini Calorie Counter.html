@@ -7,18 +7,20 @@
     Select One of the following foods to track.
   <body>
     <div id = 'app'>
-
       <ul>
-        <li v-for="food in foods">{{ food }}</li>
+        <li v-for="food in CalData" v-text="CalData.food">
+        </li>
+        <li v-for="calories in CalData" v-text="CalData.calories"></li>
       </ul>
-
+    <button>Select</button>
     </div>
       <script src="vue.js"></script>
         <script>
           new Vue({
             el: '#app',
             data: {
-              foods: ["Pizza", "Chinese"]
+              CalData: {food:"Pizza", calories:"500"}
+// ["Pizza", "Noodles", "Dosa", "Idli", "Rice", "Coconut", "Coke","Dal Fry", "Almonds", "Cashews"]
             }
           })
       </script>
