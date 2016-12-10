@@ -1,6 +1,11 @@
 new Vue({
     el: '#app',
     data: {
-        foods: ["Pizza", "Chinese"]
+        searchQuery: '',
+        gridColumns: ['dish', 'calories'],
+        foods: [
+          { dish: 'Pizza', calories: Infinity },
+          { dish: 'Chinese', calories: 500 }
+        ]
     }
 })
