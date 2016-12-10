@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Mini Calorie Counter</title>
-  </head>
-    Select One of the following foods to track.
-  <body>
-    <div id = 'app'>
+<head>
+  <meta charset="utf-8">
+  <title>Mini Calorie Counter</title>
+  <link rel="stylesheet" href="counter.css" />
+</head>
+<body>
+  <div id="app">
+    <form id="search">
+      Search <input name="query" v-model="searchQuery">
+    </form>
+    <data-grid
+      :data="foods"
+      :columns="gridColumns"
+      :filter-key="searchQuery">
+    </data-grid>
+  </div>
 
-      <ul>
-        <li v-for="food in foods">{{ food }}</li>
-      </ul>
-
-    </div>
-      <script src="vue.js"></script>
-        <script>
-          new Vue({
-            el: '#app',
-            data: {
-              foods: ["Pizza", "Chinese"]
-            }
-          })
-      </script>
-  </body>
+  <script type="text/x-template" id="grid-template">
+    <!-- This is the HTML for the third party grid component that we're using. -->
+    <table>
+      <thead>
+        <tr>
+          <th v-for="key in columns"
+            @click="sortBy(key)"
+            :class="{ active: sortKey == key }">
+            {{ key | capitalize }}
+            <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="entry in filteredData">
+          <td v-for="key in columns">
+            {{entry[key]}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </script>
+  <script src="vue.js"></script>
+  <script src="grid-component.js"></script>
+  <script src="counter.js"></script>
+</body>
 </html>
