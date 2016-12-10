@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Mini Calorie Counter</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Mini Calorie Counter</title>
+  <link rel="stylesheet" href="counter.css" />
+</head>
+<body>
+  <div id="app">
     Select One of the following foods to track.
-  <body>
-    <div id = 'app'>
-
-      <ul>
-        <li v-for="food in foods">{{ food }}</li>
-      </ul>
-
-    </div>
-      <script src="vue.js"></script>
-        <script>
-          new Vue({
-            el: '#app',
-            data: {
-              foods: ["Pizza", "Chinese"]
-            }
-          })
-      </script>
-  </body>
+    <ul>
+      <li v-for="food in foods">{{ food }}</li>
+    </ul>
+  </div>
+  <script src="vue.js"></script>
+  <script src="counter.js"></script>
+</body>
 </html>
