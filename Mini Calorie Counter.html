@@ -33,7 +33,7 @@
       </thead>
       <tbody>
         <tr v-for="entry in filteredData">
-          <td v-for="key in columns">
+          <td v-for="key in columns"><button>ADD</button>
             {{entry[key]}}
           </td>
         </tr>
