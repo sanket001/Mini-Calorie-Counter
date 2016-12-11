@@ -14,6 +14,12 @@ new Vue({
           { dish: 'Noodles', calories: 500, },
           { dish: 'Tofu', calories: 500,  },
           { dish: 'Dal Fry', calories: 500, }
-        ]
+        ],
+        userInput: [],
+        methods:{
+          addbutn: function(){
+            userInput = this.foods.dish.push(this.userInput)
+          }
+        }
     }
 })

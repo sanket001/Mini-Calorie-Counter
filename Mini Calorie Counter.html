@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="counter.css" />
 </head>
 <body>
+  <h1>Calorie Table</h1>
   <div id="app">
     <form id="search">
       Search <input name="query" v-model="searchQuery">
@@ -33,12 +34,13 @@
       </thead>
       <tbody>
         <tr v-for="entry in filteredData">
-          <td v-for="key in columns"><button>ADD</button>
+          <td v-for="key in columns"><button @click=addbutn()>ADD</button>
             {{entry[key]}}
           </td>
         </tr>
       </tbody>
     </table>
+    <h1>User Input</h1>
   </script>
   <script src="vue.js"></script>
   <script src="grid-component.js"></script>
