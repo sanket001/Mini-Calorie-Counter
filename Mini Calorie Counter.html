@@ -12,10 +12,17 @@
       Search <input name="query" v-model="searchQuery">
     </form>
     <data-grid
+      @add="addDish"
       :data="foods"
       :columns="gridColumns"
       :filter-key="searchQuery">
     </data-grid>
+
+    <h1>User Input</h1>
+    <ul v-if="userInput">
+      <li v-for="food in userInput">{{food.dish }} ({{food.calories}} calories)</li>
+    </ul>
+    <div v-else>Please select some dishes from above</div>
   </div>
 
   <script type="text/x-template" id="grid-template">
@@ -30,17 +37,18 @@
             <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
             </span>
           </th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="entry in filteredData">
-          <td v-for="key in columns"><button @click=addbutn()>ADD</button>
+          <td v-for="key in columns">
             {{entry[key]}}
           </td>
+          <td><button @click=addbutn(entry)>ADD</button></td>
         </tr>
       </tbody>
     </table>
-    <h1>User Input</h1>
   </script>
   <script src="vue.js"></script>
   <script src="grid-component.js"></script>

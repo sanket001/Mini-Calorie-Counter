@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data: {
         searchQuery: '',
-        gridColumns: ['dish', 'calories', 'button'],
+        gridColumns: ['dish', 'calories'],
         foods: [
           { dish: 'Pizza', calories: Infinity, },
           { dish: 'Chinese', calories: 250,},
@@ -16,10 +16,10 @@ new Vue({
           { dish: 'Dal Fry', calories: 80, }
         ],
         userInput: [],
+        },
         methods:{
-          addbutn:function(){
-            this.foods.push(this.userInput)
+          addDish:function(dish){
+            this.userInput.push(dish);
           }
         }
-    }
 })
