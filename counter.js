@@ -8,7 +8,7 @@ new Vue({
           { dish: 'Chinese', calories: 250,},
           { dish: 'Idli', calories: 50,  },
           { dish: 'Dosa', calories: 100,  },
-          { dish: 'Coconut', calories: 90,  },
+          { dish: 'Coconut', calories: 95,  },
           { dish: 'Milk', calories: 75,  },
           { dish: 'Bread', calories: 80, },
           { dish: 'Noodles', calories: 200, },
