@@ -50,8 +50,9 @@ Vue.component('data-grid', {
   },
   methods: {
     addbutn: function(dish) {
-      this.$emit('add', dish);
+      this.$emit('add', dish);   
     },
+
     sortBy: function (key) {
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1
