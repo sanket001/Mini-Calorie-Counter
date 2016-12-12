@@ -20,6 +20,6 @@ new Vue({
         methods:{
           addDish:function(dish){
             this.userInput.push(dish);
-          }
+          } //adds the dish and calorie information into userInput Array
         }
 })
